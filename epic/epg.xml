@@ -7,7 +7,7 @@
     <copyright>Copyright (C) 2018 Epic Lanka (PVT) LTD. All rights reserved.</copyright>
     <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
     <version>1.0.0</version>
-    <description><![CDATA[<a href="https://www.2checkout.com/referral?r=virtuemart" target="_blank">Epic IPG</a> is a payment gateway for joomla,wardpress ]]>
+    <description><![CDATA[<a href="https://www.epictechnologies.net" target="_blank">Epic IPG</a> is a payment gateway for joomla,wardpress ]]>
     </description>
     <files>
         <filename plugin="epg">epg.php</filename>
@@ -25,7 +25,7 @@
             default="default" hide_default="1" hide_none="1"
             stripext="0"  exclude="^_" />
         <param type="spacer" default="" level="level1" />
-        <param   type="spacer" default="VMPAYMENT_EPG_PARAMS" level="level1" />
+        <param type="spacer" default="VMPAYMENT_EPG_PARAMS" level="level1" />
         <param type="text" name="epg_seller_id"  size="50" label="VMPAYMENT_EPG_SELLER_ID"
              default="" description="VMPAYMENT_EPG_SELLER_ID_DESC" />
         <param type="text" name="epg_secret_word"  size="50" label="VMPAYMENT_EPG_SECRET_WORD"
@@ -100,3 +100,14 @@
         <server type="extension" name="VirtueMart3 plg_vmpayment_epg Update Site"><![CDATA[http://virtuemart.net/releases/vm3/plg_vmpayment_epg_update.xml]]></server>
     </updateservers>
 </extension>
+
+<!-- selet fields -->
+<!-- 
+
+<field name="paypalproduct" type="list" default="std" label="VMPAYMENT_PAYPAL_PRODUCTS"
+                       description="VMPAYMENT_PAYPAL_PRODUCTS_DESC">
+                    <option value="std">VMPAYMENT_PAYPAL_PRODUCTS_STANDARD</option>
+                    <option value="exp">VMPAYMENT_PAYPAL_PRODUCTS_EXPRESS</option>
+                    <option value="api">VMPAYMENT_PAYPAL_PRODUCTS_API</option>
+                    <option value="hosted">VMPAYMENT_PAYPAL_PRODUCTS_HOSTED</option>
+                </field> -->
