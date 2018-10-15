@@ -35,16 +35,17 @@
                     <option value="USD">VMPAYMENT_EPG_CURRENCY_USD</option>
                     <option value="EURO">VMPAYMENT_EPG_CURRENCY_EURO</option>
                 </field>
-                <field name="sandbox" type="radio" default="1" label="VMPAYMENT_EPG_SANDBOX" description="VMPAYMENT_EPG_SANDBOX_DESC" >
+                <field name="epg_sandbox" type="radio" default="1" label="VMPAYMENT_EPG_SANDBOX" description="VMPAYMENT_EPG_SANDBOX_DESC" >
                     <option value="0">COM_VIRTUEMART_NO</option>
                     <option value="1">COM_VIRTUEMART_YES</option>
                 </field>
-                <field type="file" name="epg_certfile"  size="50" label="VMPAYMENT_EPG_CERTFILE" default="" description="VMPAYMENT_EPG_CERTFILE_DESC" />
+                <field type="vmfiles" name="epg_certfile"  size="50" label="VMPAYMENT_EPG_CERTFILE" default="" description="VMPAYMENT_EPG_CERTFILE_DESC" 
+                    directory="/plugins/vmpayment/epg/keyfile"/>
             </fieldset>
         </fields>
     </vmconfig>
-    <updateservers>
+    <!-- <updateservers>
         <!-- Note: No spaces or linebreaks allowed between the server tags -->
         <server type="extension" name="VirtueMart3 plg_vmpayment_epg Update Site"><![CDATA[http://virtuemart.net/releases/vm3/plg_vmpayment_epg_update.xml]]></server>
-    </updateservers>
+    </updateservers> -->
 </extension>
