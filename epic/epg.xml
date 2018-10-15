@@ -12,86 +12,34 @@
     <files>
         <filename plugin="epg">epg.php</filename>
         <folder>language</folder>
+        <folder>Image</folder>
+        <folder>Keyfile</folder>
     </files>
-    <params addpath="/administrator/components/com_virtuemart/elements">
-        <param type="vmjpluginwarning" />
-        <param type="spacer" default="VMPAYMENT_EPG_PAYMENT_TITLE" level="level1" />
-        <param type="spacer" default="VMPAYMENT_EPG_PAYMENT_WARNING"   />
-        <param type="spacer" default="" level="level1" />
-        <param type="spacer" default="VMPAYMENT_EPG_PAYMENT_SETTINGS" level="level1" />
-        <param name="payment_logos" type="vmfiles" label="VMPAYMENT_EPG_LOGOS"
-            description="VMPAYMENT_EPG_LOGOS_DESC"
-            directory="/images/virtuemart/payment"
-            default="default" hide_default="1" hide_none="1"
-            stripext="0"  exclude="^_" />
-        <param type="spacer" default="" level="level1" />
-        <param type="spacer" default="VMPAYMENT_EPG_PARAMS" level="level1" />
-        <param type="text" name="epg_seller_id"  size="50" label="VMPAYMENT_EPG_SELLER_ID"
-             default="" description="VMPAYMENT_EPG_SELLER_ID_DESC" />
-        <param type="text" name="epg_secret_word"  size="50" label="VMPAYMENT_EPG_SECRET_WORD"
-             default="" description="VMPAYMENT_EPG_SECRET_WORD_DESC" />
-        <param type="spacer" default="" level="level1" />
-        <param name="payment_currency" type="vmacceptedcurrency" default="" label="VMPAYMENT_EPG_CURRENCY" description="VMPAYMENT_EPG_CURRENCY_DESC" />
-        <param name="countries" type="vmcountries"  scope="com_virtuemart" default="" label="VMPAYMENT_EPG_COUNTRIES" description="VMPAYMENT_EPG_COUNTRIES_DESC"/>
-        <param name="min_amount" type="text"  label="VMPAYMENT_EPG_MIN_AMOUNT" description="VMPAYMENT_EPG_MIN_AMOUNT_EXPLAIN" />
-        <param name="max_amount" type="text"  label="VMPAYMENT_EPG_MAX_AMOUNT" description="VMPAYMENT_EPG_MAX_AMOUNT_EXPLAIN" />
-        <param name="cost_per_transaction" type="text"  label="VMPAYMENT_EPG_COST_PER_TRANSACTION" description="VMPAYMENT_EPG_COST_PER_TRANSACTION_EXPLAIN" />
-        <param name="cost_percent_total" type="text"  label="VMPAYMENT_EPG_COST_PERCENT_TOTAL" description="VMPAYMENT_EPG_COST_PERCENT_TOTAL_EXPLAIN" />
-        <param name="tax_id" type="vmtaxes" scope="com_virtuemart"  label="VMPAYMENT_EPG_TAX" description="VMPAYMENT_EPG_TAX_EXPLAIN" />
-        <param type="spacer" default="" level="level1" />
-        <param name="debug" type="radio" default="0" label="VMPAYMENT_EPG_DEBUG" description="VMPAYMENT_EPG_DEBUG_DESC" >
-            <option value="0">COM_VIRTUEMART_NO</option>
-            <option value="1">COM_VIRTUEMART_YES</option>
-        </param>
-        <param name="sandbox" type="radio" default="1" label="VMPAYMENT_EPG_SANDBOX" description="VMPAYMENT_EPG_SANDBOX_DESC" >
-            <option value="0">COM_VIRTUEMART_NO</option>
-            <option value="1">COM_VIRTUEMART_YES</option>
-        </param>
-        <param name="direct_checkout" type="radio" default="1" label="VMPAYMENT_EPG_DIRECT" description="VMPAYMENT_EPG_DIRECT_DESC" >
-            <option value="0">COM_VIRTUEMART_NO</option>
-            <option value="1">COM_VIRTUEMART_YES</option>
-        </param>
-        <param type="spacer" default="" level="level1" />
-        <param type="spacer" default="VMPAYMENT_EPG_PAYMENT_PAGE" level="level1" />
-        <param name="status_pending" type="vmorderstate" scope="com_virtuemart" default="P" label="VMPAYMENT_EPG_STATUS_PENDING" description="VMPAYMENT_EPG_STATUS_PENDING_EXPLAIN" />
-        <param name="status_success" type="vmorderstate" scope="com_virtuemart" default="C" label="VMPAYMENT_EPG_STATUS_SUCCESS" description="VMPAYMENT_EPG_STATUS_SUCCESS_EXPLAIN" />
-        <param name="status_canceled" type="vmorderstate" scope="com_virtuemart" default="X" label="VMPAYMENT_EPG_STATUS_FAILED" description="VMPAYMENT_EPG_STATUS_FAILED_EXPLAIN" />
-    </params>
     <vmconfig>
-        <fields name="params">
+         <fields name="params">
             <fieldset name="payment" addfieldpath="/administrator/components/com_virtuemart/fields">
                 <field type="vmtitle" description="" default="VMPAYMENT_EPG_PAYMENT_TITLE" />
-                <field type="text" name="epg_seller_id"  size="50" label="VMPAYMENT_EPG_SELLER_ID" default="" description="VMPAYMENT_EPG_SELLER_ID_DESC" />
-                <field type="text" name="epg_secret_word"  size="50" label="VMPAYMENT_EPG_SECRET_WORD" default="" description="VMPAYMENT_EPG_SECRET_WORD_DESC" />
-                <field name="payment_currency" type="vmacceptedcurrency" default="" label="VMPAYMENT_EPG_CURRENCY" description="VMPAYMENT_EPG_CURRENCY_DESC" />
-                <field name="countries" type="vmcountries"  scope="com_virtuemart" default="" label="VMPAYMENT_EPG_COUNTRIES" description="VMPAYMENT_EPG_COUNTRIES_DESC"/>
-                <field name="min_amount" type="text"  label="VMPAYMENT_EPG_MIN_AMOUNT" description="VMPAYMENT_EPG_MIN_AMOUNT_EXPLAIN" />
-                <field name="max_amount" type="text"  label="VMPAYMENT_EPG_MAX_AMOUNT" description="VMPAYMENT_EPG_MAX_AMOUNT_EXPLAIN" />
-                <field name="cost_per_transaction" type="text"  label="VMPAYMENT_EPG_COST_PER_TRANSACTION" description="VMPAYMENT_EPG_COST_PER_TRANSACTION_EXPLAIN" />
-                <field name="cost_percent_total" type="text"  label="VMPAYMENT_EPG_COST_PERCENT_TOTAL" description="VMPAYMENT_EPG_COST_PERCENT_TOTAL_EXPLAIN" />
-                <field name="tax_id" type="vmtaxes" scope="com_virtuemart"  label="VMPAYMENT_EPG_TAX" description="VMPAYMENT_EPG_TAX_EXPLAIN" />
-                <field name="debug" type="radio" default="0" label="VMPAYMENT_EPG_DEBUG" description="VMPAYMENT_EPG_DEBUG_DESC" >
-                    <option value="0">COM_VIRTUEMART_NO</option>
-                    <option value="1">COM_VIRTUEMART_YES</option>
+                <field type="text" name="epg_merchant_id"  size="50" label="VMPAYMENT_EPG_MERCHANT_ID" default="" description="VMPAYMENT_EPG_SELLER_ID_DESC" />
+                <field type="text" name="epg_terminal_id"  size="50" label="VMPAYMENT_EPG_TERMINAL_ID" default="" description="VMPAYMENT_EPG_SELLER_ID_DESC" />
+                <field type="list" name="epg_cardtype"  default="std" label="VMPAYMENT_EPG_CARDTYPE"
+                       description="VMPAYMENT_EPG_CARDTYPE_DESC">
+                    <option value="VISA">VMPAYMENT_EPG_CARDTYPE_VISA</option>
+                    <option value="MASTER">VMPAYMENT_EPG_CARDTYPE_MASTER</option>
+                    <option value="AMEX">VMPAYMENT_EPG_CARDTYPE_AMEX</option>
+                </field>
+                <field name="epg_dateofregistory" type="calendar" default="" label="VMPAYMENT_EPG_DATEOFREGISTORY"
+                       description="VMPAYMENT_EPG_DATEOFREGISTORY_DESC"/>
+                <field type="list" name="epg_currency"  default="std" label="VMPAYMENT_EPG_CURRENCY"
+                       description="VMPAYMENT_EPG_CURRENCY_DESC">
+                    <option value="LKR">VMPAYMENT_EPG_CURRENCY_LKR</option>
+                    <option value="USD">VMPAYMENT_EPG_CURRENCY_USD</option>
+                    <option value="EURO">VMPAYMENT_EPG_CURRENCY_EURO</option>
                 </field>
                 <field name="sandbox" type="radio" default="1" label="VMPAYMENT_EPG_SANDBOX" description="VMPAYMENT_EPG_SANDBOX_DESC" >
                     <option value="0">COM_VIRTUEMART_NO</option>
                     <option value="1">COM_VIRTUEMART_YES</option>
                 </field>
-                <field name="direct_checkout" type="radio" default="1" label="VMPAYMENT_EPG_DIRECT" description="VMPAYMENT_EPG_DIRECT_DESC" >
-                    <option value="0">COM_VIRTUEMART_NO</option>
-                    <option value="1">COM_VIRTUEMART_YES</option>
-                </field>
-                <field type="spacer" default="" level="level1" />
-                <field type="spacer" default="VMPAYMENT_EPG_PAYMENT_PAGE" level="level1" />
-                <field name="status_pending" type="vmorderstate" scope="com_virtuemart" default="P" label="VMPAYMENT_EPG_STATUS_PENDING" description="VMPAYMENT_EPG_STATUS_PENDING_EXPLAIN" />
-                <field name="status_success" type="vmorderstate" scope="com_virtuemart" default="C" label="VMPAYMENT_EPG_STATUS_SUCCESS" description="VMPAYMENT_EPG_STATUS_SUCCESS_EXPLAIN" />
-                <field name="status_canceled" type="vmorderstate" scope="com_virtuemart" default="X" label="VMPAYMENT_EPG_STATUS_FAILED" description="VMPAYMENT_EPG_STATUS_FAILED_EXPLAIN" />
-                <field name="payment_logos" type="imagelist" label="VMPAYMENT_EPG_LOGOS" multiple="true"
-                           description="VMPAYMENT_EPG_LOGOS_DESC"
-                           directory="/images/virtuemart/payment"
-                           default="" hide_default="1" hide_none="1"
-                           stripext="0" exclude="^_"/>
+                <field type="file" name="epg_certfile"  size="50" label="VMPAYMENT_EPG_CERTFILE" default="" description="VMPAYMENT_EPG_CERTFILE_DESC" />
             </fieldset>
         </fields>
     </vmconfig>
@@ -100,14 +48,3 @@
         <server type="extension" name="VirtueMart3 plg_vmpayment_epg Update Site"><![CDATA[http://virtuemart.net/releases/vm3/plg_vmpayment_epg_update.xml]]></server>
     </updateservers>
 </extension>
-
-<!-- selet fields -->
-<!-- 
-
-<field name="paypalproduct" type="list" default="std" label="VMPAYMENT_PAYPAL_PRODUCTS"
-                       description="VMPAYMENT_PAYPAL_PRODUCTS_DESC">
-                    <option value="std">VMPAYMENT_PAYPAL_PRODUCTS_STANDARD</option>
-                    <option value="exp">VMPAYMENT_PAYPAL_PRODUCTS_EXPRESS</option>
-                    <option value="api">VMPAYMENT_PAYPAL_PRODUCTS_API</option>
-                    <option value="hosted">VMPAYMENT_PAYPAL_PRODUCTS_HOSTED</option>
-                </field> -->
